@@ -1,0 +1,8 @@
+
+{% if post_list %}
+    {% for post in post_list %}
+        {% include "../partials/_post-card.html" %}
+    {% endfor %}
+{% else %}
+    <p>No posts are available.</p>
+{% endif %}

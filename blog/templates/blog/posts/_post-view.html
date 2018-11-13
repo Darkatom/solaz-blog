@@ -1,0 +1,23 @@
+
+<div class="post-wrapper">
+    <div class="post-title">
+        <a href="{% url 'blog:post_view' post.id %}"><p>{{ post.post_title }}</p></a>
+    </div>
+    <div class="post-body">
+        <p>{{ post.post_body }}</p>
+    </div>
+    <div class="post-footer">
+        <a class="post-comment-button" href="{{post.id}}"><i class="fas fa-comment"></i></a>
+        <a class="post-share-button" href="{{post.id}}"><i class="fas fa-share-alt"></i></a>
+    </div>
+</div>
+
+<div class="post-comments-wrapper">
+    {% if post.comments.all %}
+        {% for comment in post.comments.all %}
+            {% include "../partials/_comment.html" %}
+        {% endfor %}
+    {% else %}
+        <p>No comments are available.</p>
+    {% endif %}
+</div>

@@ -1,0 +1,306 @@
+
+html, body {
+    margin: 0 auto;
+    padding: 0;
+    max-height: 100%;
+    background-color: rgb(243, 243, 235);
+    font-family: 'CenturyGothic';
+}
+
+.web-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+@font-face {
+    font-family: 'CenturyGothic';
+    src: url('./CenturyGothic.ttf');
+}
+
+/* ---------------- HEADER ---------------- */
+.header-wrapper {
+	position: fixed;
+    background-color: rgb(46, 48, 47);
+    background-image: url("./images/header-background.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 300px;
+}
+
+.header-content {    
+    max-width: 1024px;
+    margin: 0 auto;
+    margin-top: 210px;
+    text-align: center;
+}
+
+.header-title {
+    color: rgb(243, 243, 235);
+    text-decoration: none;
+}
+
+/* ------------- HEADER REDUCED ------------- */
+
+.header-wrapper.reduced {
+	position: fixed;
+    background-color: rgb(46, 48, 47);
+    background-image: none;
+    width: 100%;
+    height: auto;
+}
+
+.reduced .header-content {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding-top: 15px;
+    padding-bottom: 5px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.reduced .header-title {
+    background-image: url("./images/header-background.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    margin: 3px 25px 0 15px;
+    padding: 0;
+    width: 50px;
+    height: 50px;
+
+    text-decoration: none;
+}
+
+/* ---------------- NAVIGATION ---------------- */
+
+.navigation-container {
+    color: rgb(243, 243, 235); 
+}
+
+.navigation-button {
+    color: rgb(243, 243, 235);   
+    text-decoration:none;
+    text-transform: uppercase;
+}
+
+/* ---------------- FOOTER ---------------- */
+.footer-wrapper {
+    background: rgb(46, 48, 47);
+    width: 100%;
+    color: rgb(243, 243, 235);    
+}
+
+.footer-content {
+    max-width: 1024px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-links {
+    flex: 1;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: rgb(243, 243, 235);   
+}
+
+
+/* ---------------- CONTENTS ---------------- */
+.content-flex {
+    flex: 1;
+}
+
+.content-wrapper {
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 10px;
+    padding-top: 300px; /* Height of the header */
+    padding-bottom: 60px; /* Height of the footer */
+    display: flex;
+    flex-direction: row;
+}
+
+.content-body {
+    flex: 1;
+}
+
+
+/* ---------------- SIDEBAR ---------------- */
+
+.sidebar-wrapper {
+    width: 160px;
+}
+
+.sidebar-content {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-links {
+    flex: 1;
+}
+
+.sidebar-social-buttons-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.sidebar-social-button {
+    height: 30px;
+    width: 30px;
+
+    color: rgb(46, 48, 47);
+    font-size: 1.2em;
+    text-decoration: none;
+    
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    border: 1px solid rgb(46, 48, 47);
+
+    text-align: center;
+}
+
+.sidebar-social-button.twitter i {
+    padding-top: 6px;
+}
+
+.sidebar-social-button.facebook i {
+    padding-top: 6px;
+}
+
+.sidebar-social-button.instagram i {
+    padding-top: 5px;
+}
+
+.sidebar-social-button.email i {
+    padding-top: 6px;
+}
+
+
+/* ---------------- POST CARD ---------------- */
+
+.post-card {
+    margin-top: 25px;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1.5em;
+    
+    background-color: white;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+}
+
+.post-card-title {
+    font-size: 1.2em;
+    padding-top: 0.5em;
+}
+
+.post-card-title a {
+    text-decoration: none;
+    color: rgb(46, 48, 47);
+}
+
+.post-card-content {
+    line-height: 1.8em;
+}
+
+.post-card-footer {
+    padding-top: 0.8em;
+    display: flex;
+    flex-direction: row;
+}
+
+
+/* ---------------- POST VIEW ---------------- */
+
+.post-wrapper {
+    margin-top: 25px;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1.5em;
+    
+    background-color: white;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+}
+
+.post-title {
+    font-size: 1.2em;
+    padding-top: 0.5em;
+}
+
+.post-title a {
+    text-decoration: none;
+    color: rgb(46, 48, 47);
+}
+
+.post-body {
+    line-height: 1.8em;
+}
+
+.post-footer {
+    text-align: right;
+}
+
+/* ---------------- POST BUTTONS ---------------- */
+
+.post-more-button {
+    flex: 1;
+    color: rgb(46, 48, 47);
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: none;
+}
+
+.post-share-button {
+    padding: 0 5px;
+    color: rgb(46, 48, 47);
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+.post-comment-button {
+    padding: 0 5px;
+    color: rgb(46, 48, 47);
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+
+/* ---------------- COMMENTS ---------------- */
+.comment-wrapper {
+    margin-top: 15px;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1.5em;
+    
+    background-color: white;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+}
+
+.comment-header {
+    font-size: 0.8em;
+    padding-top: 0.5em;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.comment-content {
+    text-decoration: none;
+    color: rgb(46, 48, 47);
+    line-height: 1.2em;
+}
