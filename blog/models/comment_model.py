@@ -2,8 +2,8 @@ from django.db import models
 from .post_model import Post
 
 class Comment (models.Model):
-    author = models.CharField(max_length=20)
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+    author = models.CharField(max_length=20)
     pub_date = models.DateTimeField('date published')
     text = models.TextField(max_length=5000)
 
