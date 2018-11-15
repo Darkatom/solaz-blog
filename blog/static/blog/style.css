@@ -315,3 +315,32 @@ html, body {
     color: rgb(46, 48, 47);
     line-height: 1.2em;
 }
+
+.comment-form h3 {
+    padding-top: 1em;
+}
+
+.comment-form .text-field {
+    padding-top: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-form .submit-wrapper {
+    padding-top: 1em;
+    text-align: center;
+}
+
+.comment-form .send-button {
+    background-color: white;
+
+    color: rgb(46, 48, 47);
+    font-size: 1em;
+    text-decoration: none;
+    
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    border: 1px solid rgb(46, 48, 47);
+
+    text-align: center;
+}
