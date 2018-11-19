@@ -1,5 +1,5 @@
 
-<div class="post-wrapper">
+<div class="post-wrapper card">
     <div class="post-title">
         <a href="{% url 'blog:post_view' post.id %}"><p>{{ post.post_title }}</p></a>
     </div>
@@ -11,7 +11,7 @@
     </div>
 </div>
 
-<div class="comment-form">
+<div class="comment-form card">
     <h3>¡Únete a la conversación!</h3>
     <form method="POST" class="post-form" action="{% url 'blog:new_comment' post.id %}">
         {% csrf_token %}

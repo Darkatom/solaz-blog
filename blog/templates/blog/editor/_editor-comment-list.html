@@ -1,0 +1,8 @@
+
+{% if item_list %}
+    {% for item in item_list %}
+        {% include "./_editor-comment-card.html"%}
+    {% endfor %}
+{% else %}
+    <p>No hay comentarios disponibles.</p>
+{% endif %}

@@ -1,13 +1,12 @@
-
 <div class="post-card card">
     <div class="post-card-title">
-        <a href="{% url 'blog:post_view' post.id %}"><p>{{ post.post_title }}</p></a>
+        <a href=""><p>{{ post.post_title }}</p></a>
     </div>
     <div class="post-card-content">
         <p>{{ post.post_summary }}</p>
     </div>
     <div class="post-card-footer">
-        <a class="post-more-button"  href="{% url 'blog:post_view' post.id %}">> Leer más...</a>
+        <a class="post-more-button"  href="">> Leer más...</a>
         <a class="post-share-button" href="{{post.id}}"><i class="fas fa-share-alt"></i></a>
     </div>
 </div>

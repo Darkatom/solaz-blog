@@ -1,0 +1,20 @@
+{% load static %}
+
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
+        <link rel="stylesheet" href="{% static "fontawesome-free-5.5.0-web/css/all.css" %}">        
+    </head>
+    <body>
+        <div class="web-container">
+            {% include "./_dashboard-header.html" %}
+
+            <div class="flex-row">
+                {% include "./_dashboard-sidebar.html" %}
+                <div class="flex-grow">
+                    {% include template_path %}
+                </div
+            </div>
+        </div>
+    </body>
+</html>

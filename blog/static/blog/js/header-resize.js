@@ -9,8 +9,9 @@ function resizeHeaderOnScroll() {
         title.innerHTML = "";
     } else {
         header.classList.remove("reduced");
-        title.innerHTML = "La bruja moderna";
+        title.innerHTML = blog_title;
     }        
 }
 
+var blog_title = {{blog_title}};
 window.addEventListener('scroll', resizeHeaderOnScroll);

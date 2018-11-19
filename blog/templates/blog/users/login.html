@@ -1,0 +1,20 @@
+{% load static %}
+
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
+        <link rel="stylesheet" href="{% static "fontawesome-free-5.5.0-web/css/all.css" %}">        
+    </head>
+    <body>
+        <div class="web-container">        
+            <div class="login-wrapper card">
+                <h2>Entrar</h2>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="send-button">Login</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

@@ -2,8 +2,7 @@ from django.db import models
 
 class BlogSettings (models.Model):
     title = models.CharField(max_length=300)
-    about_us = models.TextField(max_length=20000)
-    about_this_blog = models.TextField(max_length=20000)
+    about = models.TextField(max_length=20000)
     contact_data = models.TextField(max_length=20000)
 
     def __str__(self):
@@ -14,10 +13,9 @@ class BlogSettings (models.Model):
 
     # -- Control
     
-    def new(self, title, about_us, about_this_blog, contact_data):
+    def new(self, title, about, contact_data):
         self.title = title
-        self.about_us = about_us
-        self.about_this_blog = about_this_blog
+        self.about = about
         self.contact_data = contact_data
         self.save()
 

@@ -1,0 +1,23 @@
+{% load static %}
+
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
+        <link rel="stylesheet" href="{% static "fontawesome-free-5.5.0-web/css/all.css" %}">        
+    </head>
+    <body>
+        <div class="web-container">
+            {% include "./navigation/_header.html" %}
+
+            <div class="content-flex">
+                <div class="content-wrapper">
+                    <div class="static-body card">
+                        {{ page_text }}
+                    </div>
+                </div>
+            </div>
+            
+            {% include "./navigation/_footer.html" %}
+        </div>
+    </body>
+</html>
