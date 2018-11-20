@@ -15,7 +15,12 @@ urlpatterns = [
     path('logout/', views.logout, name='logout'),
     
     path('dashboard/posts/', views.dashboard_posts, name='dashboard_posts'),
+    path('dashboard/posts/new/', views.new_post, name='new_post'),
+    path('dashboard/posts/<int:post_id>/', views.edit_post, name='edit_post'),
+    path('dashboard/posts/<int:post_id>/delete/', views.delete_post, name='delete_post'),
+
     path('dashboard/comments/', views.dashboard_comments, name='dashboard_comments'),
     path('dashboard/static/', views.dashboard_static, name='dashboard_static'),
     path('dashboard/page/', views.dashboard_page, name='dashboard_page'),
+    
 ]

@@ -18,6 +18,10 @@ html, body {
     src: url('./CenturyGothic.ttf');
 }
 
+input, textarea {
+    font-family: 'CenturyGothic';
+}
+
 .card {
     background-color: white;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
@@ -126,8 +130,6 @@ html, body {
 .footer-content {
     max-width: 1024px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: row;
 }
 
 .footer-links {
@@ -152,9 +154,6 @@ html, body {
     padding: 10px;
     padding-top: 300px; /* Height of the header */
     padding-bottom: 60px; /* Height of the footer */
-
-    display: flex;
-    flex-direction: row;
 }
 
 .content-body {
@@ -178,12 +177,6 @@ html, body {
 
 .sidebar-content {
     padding-left: 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-.sidebar-links {
-    flex: 1;
 }
 
 .sidebar-social-buttons-container {
@@ -250,8 +243,6 @@ html, body {
 
 .post-card-footer {
     padding-top: 0.8em;
-    display: flex;
-    flex-direction: row;
 }
 
 
@@ -282,16 +273,14 @@ html, body {
     text-align: right;
 }
 
-.comment-form {
-    margin-top: 25px;
-    padding-bottom: 1em;
-    padding-left: 1em;
-    padding-right: 1.5em;
+.post-new {
+    text-align: center;
+    padding-top: 1em;
 }
 
 /* ---------------- POST BUTTONS ---------------- */
 
-.post-more-button {
+.post-more {
     flex: 1;
     color: rgb(46, 48, 47);
     font-weight: bold;
@@ -299,19 +288,52 @@ html, body {
     text-decoration: none;
 }
 
-.post-share-button {
+.post-button {
     padding: 0 5px;
     color: rgb(46, 48, 47);
     font-size: 1.5em;
     text-decoration: none;
 }
 
-.post-comment-button {
-    padding: 0 5px;
-    color: rgb(46, 48, 47);
-    font-size: 1.5em;
-    text-decoration: none;
+/* ---------------- POST FORMS ---------------- */
+
+.post-form {
+    margin: 1.2em 25px;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1.5em;
 }
+
+.post-form label {
+    padding: 1em;
+}
+
+.post-form .title-field input {
+    height: 1.5em;
+    font-size: 1.2em;
+}
+
+.post-form .body-field textarea {
+    font-size: 1em;
+}
+
+
+.post-form .submit-wrapper {
+    padding-top: 1.5em;
+    text-align: center;
+}
+
+.comment-form {
+    margin-top: 25px;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1.5em;
+}
+
+.comment-form input {
+    font-family: 'CenturyGothic';
+}
+
 
 
 /* ---------------- COMMENTS ---------------- */
@@ -432,4 +454,11 @@ html, body {
     
     font-size: 1.2em;
     text-decoration: none;
+}
+
+.dashboard-content .post-card {
+    margin-left: 25px;
+    margin-right: 25px;
+
+    align-items: center;
 }

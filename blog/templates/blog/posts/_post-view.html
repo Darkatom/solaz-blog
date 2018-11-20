@@ -7,21 +7,19 @@
         <p>{{ post.post_body }}</p>
     </div>
     <div class="post-footer">
-        <a class="post-share-button" href="{{post.id}}"><i class="fas fa-share-alt"></i></a>
+        <a class="post-button" href="{{post.id}}"><i class="fas fa-share-alt"></i></a>
     </div>
 </div>
 
 <div class="comment-form card">
     <h3>¡Únete a la conversación!</h3>
-    <form method="POST" class="post-form" action="{% url 'blog:new_comment' post.id %}">
+    <form method="POST" class="comment-form" action="{% url 'blog:new_comment' post.id %}">
         {% csrf_token %}
         <div class="author-field">
-            <label for="{{ form.author.id_for_label }}">Tu nombre:</label>
-            {{ form.author }}
+            {{ form.author.label_tag }}{{ form.author }}
         </div>
         <div class="text-field">
-            <label for="{{ form.text.id_for_label }}">Tu comentario:</label>
-            {{ form.text }}
+            {{ form.text.label_tag }}{{ form.text }}
         </div>
         <div class="submit-wrapper">
             <button type="submit" class="send-button">Mandar</button>
@@ -31,7 +29,7 @@
 
 {% if post.comments.all %}
     {% for comment in post.comments.all %}
-        {% include "../partials/_comment.html" %}
+        {% include "../partials/_comment-card.html" %}
     {% endfor %}
 {% else %}
     <p>No comments are available.</p>

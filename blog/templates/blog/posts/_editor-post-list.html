@@ -1,0 +1,11 @@
+<a href="{% url 'blog:new_post' %}">
+    <div class="post-new post-card card">
+        <div class="post-button"><i class="fas fa-plus-circle"></i></div>
+    </div>
+</a>
+
+{% if post_list %}
+    {% for post in post_list %}
+        {% include "blog/partials/_editor-post-card.html"%}
+    {% endfor %}
+{% endif %}

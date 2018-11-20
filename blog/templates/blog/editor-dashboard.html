@@ -7,11 +7,11 @@
     </head>
     <body>
         <div class="web-container">
-            {% include "./_dashboard-header.html" %}
+            {% include "./navigation/_dashboard-header.html" %}
 
             <div class="flex-row">
-                {% include "./_dashboard-sidebar.html" %}
-                <div class="flex-grow">
+                {% include "./navigation/_dashboard-sidebar.html" %}
+                <div class="dashboard-content flex-grow">
                     {% include template_path %}
                 </div
             </div>

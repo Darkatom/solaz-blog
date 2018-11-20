@@ -2,7 +2,7 @@ from django.db import models
 
 class Post (models.Model):
     pub_date = models.DateTimeField('date published')
-    last_edit_date = models.DateTimeField('date last edited')
+    last_edit_date = models.DateTimeField('date last edited', null=True)
     post_title = models.CharField(max_length=200)
 
     post_summary = models.TextField(max_length=1000)
@@ -22,14 +22,16 @@ class Post (models.Model):
 
     # -- Control
     
-    def new(self, pub_date, text):
+    def new(self, pub_date, title, text, save=True):
         self.pub_date = pub_date
+        self.post_title = title
         self.post_body = text
         self.post_summary = text[:997] + "..."
         self.save()  
 
-    def edit(self, edit_date, text):
+    def edit(self, edit_date, title, text):
         self.last_edit_date = edit_date
+        self.post_title = title
         self.post_body = text
         self.post_summary = text[:997] + "..."
         self.save()

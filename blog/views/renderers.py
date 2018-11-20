@@ -13,7 +13,7 @@ def static_page_renderer(request, context):
     return render(request, 'blog/static-page.html', context)
     
 def dashboard_renderer(request, context):
-    return render(request, 'blog/editor/editor-dashboard.html', context)
+    return render(request, 'blog/editor-dashboard.html', context)
     
 def index(request):
     post_list = Post.objects.order_by('-pub_date')

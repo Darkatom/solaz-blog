@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def dashboard_posts(request):
     context = {
-        'template_path': "./blog/editor/_editor-post-list.html",
+        'template_path': "./blog/posts/_editor-post-list.html",
         'post_list': Post.objects.all()
     }
     return dashboard_renderer(request, context)
@@ -16,7 +16,7 @@ def dashboard_posts(request):
 @login_required
 def dashboard_comments(request):
     context = {
-        'template_path': "./blog/editor/_editor-comment-list.html",
+        'template_path': "./blog/comments/_editor-comment-list.html",
         'comment_list': Comment.objects.all()
     }
     return dashboard_renderer(request, context)
