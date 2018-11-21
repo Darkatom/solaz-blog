@@ -3,7 +3,7 @@
         <a href=""><p>{{ post.post_title }}</p></a>
     </div>
     <div class="post-card-footer">
-        <a class="post-button" href="{% url 'blog:edit_post' post.id %}"><i class="far fa-edit"></i></a>
-        <a class="post-button" href="{% url 'blog:delete_post' post.id %}"><i class="fas fa-trash-alt"></i></a>
+        <a class="blog-button" href="{% url 'blog:edit_post' post.id %}"><i class="far fa-edit"></i></a>
+        <a class="blog-button" href="{% url 'blog:delete_post' post.id %}"><i class="fas fa-trash-alt"></i></a>
     </div>
 </div>

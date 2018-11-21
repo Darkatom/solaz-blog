@@ -42,6 +42,27 @@ input, textarea {
     flex: 1;
 }
 
+.blog-button {
+    padding: 0 5px;
+    color: rgb(46, 48, 47);
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+.send-button {
+    background-color: white;
+
+    color: rgb(46, 48, 47);
+    font-size: 1em;
+    text-decoration: none;
+    
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    border: 1px solid rgb(46, 48, 47);
+
+    text-align: center;
+}
+
 
 /* ---------------- HEADER ---------------- */
 .header-wrapper {
@@ -288,13 +309,6 @@ input, textarea {
     text-decoration: none;
 }
 
-.post-button {
-    padding: 0 5px;
-    color: rgb(46, 48, 47);
-    font-size: 1.5em;
-    text-decoration: none;
-}
-
 /* ---------------- POST FORMS ---------------- */
 
 .post-form {
@@ -317,23 +331,10 @@ input, textarea {
     font-size: 1em;
 }
 
-
 .post-form .submit-wrapper {
     padding-top: 1.5em;
     text-align: center;
 }
-
-.comment-form {
-    margin-top: 25px;
-    padding-bottom: 1em;
-    padding-left: 1em;
-    padding-right: 1.5em;
-}
-
-.comment-form input {
-    font-family: 'CenturyGothic';
-}
-
 
 
 /* ---------------- COMMENTS ---------------- */
@@ -358,6 +359,19 @@ input, textarea {
     line-height: 1.2em;
 }
 
+/* ---------------- COMMENTS FORM ---------------- */
+
+.comment-form {
+    margin-top: 25px;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1.5em;
+}
+
+.comment-form input {
+    font-family: 'CenturyGothic';
+}
+
 .comment-form h3 {
     padding-top: 1em;
 }
@@ -372,21 +386,6 @@ input, textarea {
     padding-top: 1em;
     text-align: center;
 }
-
-.send-button {
-    background-color: white;
-
-    color: rgb(46, 48, 47);
-    font-size: 1em;
-    text-decoration: none;
-    
-    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
-    border-radius: 3px;
-    border: 1px solid rgb(46, 48, 47);
-
-    text-align: center;
-}
-
 
 /* ---------------- LOGIN ---------------- */
 .login-wrapper {
@@ -456,9 +455,47 @@ input, textarea {
     text-decoration: none;
 }
 
-.dashboard-content .post-card {
+.dashboard-content .card {
+    margin: 1em 25px;
+    align-items: center;
+}
+
+.dashboard-content p {
     margin-left: 25px;
     margin-right: 25px;
+}
 
-    align-items: center;
+.dashboard-content .comment-card-content {
+    padding: 0.5em 20px;
+}
+
+.dashboard-content .blog-button.comment, .blog-button.static {
+    margin-right: 25px;
+}
+
+
+/* ---------------- STATIC FORM ---------------- */
+
+.static-form {
+    margin-top: 25px;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1.5em;
+}
+
+.static-form input {
+    font-family: 'CenturyGothic';
+}
+
+.static-form h3 {
+    padding-top: 1em;
+}
+
+.static-form textarea {
+    width: 100%;
+}
+
+.static-form .submit-wrapper {
+    padding-top: 1em;
+    text-align: center;
 }

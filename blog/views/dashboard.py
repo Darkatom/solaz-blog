@@ -24,7 +24,7 @@ def dashboard_comments(request):
 @login_required
 def dashboard_static(request):
     context = {
-        'template_path': "",
+        'template_path': "./blog/statics/_editor-static-list.html",
     }
     return dashboard_renderer(request, context)
 

@@ -1,0 +1,7 @@
+<div class="card flex-row">
+    <div class="comment-card-content flex-grow">
+        <h4>{{ comment.post.post_title }}  —  {{ comment.author }}</h4>
+        <p>{{comment.text}}</p>
+    </div>
+    <a class="blog-button comment" href="{% url 'blog:delete_comment' comment.id %}"><i class="fas fa-trash-alt"></i></a>
+</div>

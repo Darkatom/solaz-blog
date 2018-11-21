@@ -1,6 +1,6 @@
 <div class="dashboard-sidebar flex-column">
-    <a href="" class="dashboard-sidebar-button">Artículos</a>
-    <a href="" class="dashboard-sidebar-button">Comentarios</a>
-    <a href="" class="dashboard-sidebar-button">Estáticas</a>
-    <a href="" class="dashboard-sidebar-button">Apariencia</a>
+    <a href="{% url 'blog:dashboard_posts' %}" class="dashboard-sidebar-button">Artículos</a>
+    <a href="{% url 'blog:dashboard_comments' %}" class="dashboard-sidebar-button">Comentarios</a>
+    <a href="{% url 'blog:dashboard_static' %}" class="dashboard-sidebar-button">Estáticas</a>
+    <!--<a href="" class="dashboard-sidebar-button">Apariencia</a>-->
 </div>

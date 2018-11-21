@@ -30,7 +30,6 @@ class PostForm(forms.ModelForm):
             
         return post
 
-
 class CommentForm(forms.ModelForm):
     author = forms.CharField(required=True, label='Tu nombre', max_length=20)
     text = forms.CharField(required=True, label='Tu comentario', max_length=5000, widget=forms.Textarea)
@@ -51,4 +50,44 @@ class CommentForm(forms.ModelForm):
 
         if commit:
             comment.save()
-        return comment
+        return 
+        
+class BlogAboutForm(forms.ModelForm):
+    about = forms.CharField(required=True, label='', max_length=20000, widget=forms.Textarea)
+
+    class Meta:
+        model = BlogSettings
+        fields = ['about']
+
+    def __init__(self, *args, **kwargs):
+        super(BlogAboutForm, self).__init__(*args, **kwargs)
+
+    def save(self, commit=True):
+        blog = super(BlogAboutForm, self).save(commit=False)
+        blog.about = self.cleaned_data["about"]
+
+        if commit:
+            blog.save()
+               
+        return blog
+
+
+class BlogContactForm(forms.ModelForm):
+    contact_data = forms.CharField(required=True, label='', max_length=20000, widget=forms.Textarea)
+
+    class Meta:
+        model = BlogSettings
+        fields = ['contact_data']
+
+    def __init__(self, *args, **kwargs):
+        super(BlogContactForm, self).__init__(*args, **kwargs)
+
+    def save(self, commit=True):
+        blog = super(BlogContactForm, self).save(commit=False)
+        blog.contact_data = self.cleaned_data["contact_data"]
+
+        if commit:
+            blog.save()
+               
+        return blog
+
