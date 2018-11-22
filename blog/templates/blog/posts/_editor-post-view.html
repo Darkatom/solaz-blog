@@ -1,0 +1,25 @@
+
+<div class="post-view flew-column">
+    <div class="post-wrapper card">
+        <div class="post-title">
+            <p>{{ post.post_title }}</p>
+        </div>
+        <div class="post-body">
+            <p>{{ post.post_body }}</p>
+        </div>
+        <div class="post-footer">
+            <p>Publicado: {{post.pub_date}}</p> 
+        </div>
+    </div>
+
+    {% if post.comments.all %}
+        {% for comment in post.comments.all %}
+            <div class="comment-control flex-row">
+                <a class="blog-button comment" href="{% url 'blog:dashboard_post_delete_comment' post.id comment.id %}"><i class="fas fa-trash-alt"></i></a>
+                {% include "../partials/_comment-card.html" %}
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No comments are available.</p>
+    {% endif %}
+</div>

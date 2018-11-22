@@ -2,18 +2,13 @@ from django.shortcuts import render, get_object_or_404, HttpResponseRedirect, re
 
 from blog.models import Post
 from blog.forms import *
-from blog.views.renderers import index_renderer, dashboard_renderer
+from blog.views.renderers import index, index_renderer, dashboard_renderer
 from django.contrib.auth.decorators import login_required
 
-def index(request):
-    post_list = Post.objects.filter(published=True).order_by('-pub_date')
-    context = {
-        'template_path': "./blog/posts/_post-index.html",
-        'post_list': post_list
-    }
-    return index_renderer(request, context)
-
 def post_view(request, post_id):
+    if request.GET:
+        return index(request)
+
     post = get_object_or_404(Post, pk=post_id)
     if not post.published:
         return HttpResponseRedirect(reverse('blog:index'))

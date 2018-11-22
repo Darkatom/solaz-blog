@@ -63,6 +63,33 @@ input, textarea {
     text-align: center;
 }
 
+/* ---------------- SEARCH BAR ---------------- */
+
+.search-bar {
+    padding: 0 25px;
+    margin-top: 18px;
+    width: auto;
+}
+
+.search-bar i {
+    color: rgb(46, 48, 47);
+    padding-right: 12px;
+}
+
+.search-bar input {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+
+    background-color: transparent;    
+    width: 100%;
+    padding-bottom: 0.15em;
+
+    border: none;
+    border-bottom: 2px solid rgba(46, 48, 47, 0.2);
+    
+    font-size: 1em;
+    font-style: italic;
+}
 
 /* ---------------- HEADER ---------------- */
 .header-wrapper {
@@ -238,6 +265,9 @@ input, textarea {
     padding-top: 6px;
 }
 
+.sidebar-content .search-bar {
+    padding: 0;
+}
 
 /* ---------------- POST CARD ---------------- */
 
@@ -299,6 +329,11 @@ input, textarea {
     text-align: right;
 }
 
+.post-footer p {
+    font-style: italic;
+    font-size: 0.8em;
+}
+
 .post-new {
     text-align: center;
     padding-top: 1em;
@@ -352,6 +387,7 @@ input, textarea {
 
 
 /* ---------------- COMMENTS ---------------- */
+
 .comment-wrapper {
     margin-top: 15px;
     padding-bottom: 1em;
@@ -455,9 +491,7 @@ input, textarea {
 
 .dashboard-sidebar {
     background-color: rgb(46, 48, 47);
-
     width: auto;
-    height: 100%;
 }
 
 .dashboard-sidebar-button {
@@ -479,6 +513,15 @@ input, textarea {
     background-color: white;
 }
 
+.dashboard-content .post-list {
+    max-width: 1024px;
+    width: 100%;
+}
+
+.dashboard-content .post-view {
+    width: 100%;
+}
+
 .dashboard-content .card {
     margin: 1em 25px;
     align-items: center;
@@ -495,6 +538,22 @@ input, textarea {
 
 .dashboard-content .blog-button.comment, .blog-button.static {
     margin-right: 25px;
+}
+
+.dashboard-content .comment-control {
+    align-items: center;
+    justify-content: flex-start;    
+    margin: 1em 25px;
+}
+
+.dashboard-content .comment-wrapper {
+    margin: 0;
+    width: 100%;
+}
+
+.comment-control a {
+    margin: 0 10px;
+    margin-right: 10px;
 }
 
 

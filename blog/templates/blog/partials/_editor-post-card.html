@@ -1,6 +1,6 @@
 <div class="post-card card flex-row">
     <div class="post-card-title flex-grow flex-row">
-        <a href="{% url 'blog:post_view' post.id %}"><p>{{ post.post_title }}</p></a>
+        <a href="{% url 'blog:dashboard_posts_with_post' post.id %}"><p>{{ post.post_title }}</p></a>
         {% if not post.published %}<p class="label">(Borrador)</p>{% endif %}
     </div>
     <div class="post-card-footer">
