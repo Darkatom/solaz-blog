@@ -8,19 +8,28 @@ import datetime
 class PostForm(forms.ModelForm):
     post_title = forms.CharField(required=True, label='Título', max_length=200)
     post_body = forms.CharField(required=True, label='Texto', max_length=25000, widget=forms.Textarea)
+    published = forms.BooleanField(widget=forms.CheckboxInput, required=False)
+
+    _newly_created: bool
 
     class Meta:
         model = Post
-        fields = ['post_title', 'post_body']
+        fields = ['post_title', 'post_body', 'published']
 
     def __init__(self, *args, **kwargs):
+        self._newly_created = kwargs.get('instance') is None
         super(PostForm, self).__init__(*args, **kwargs)
 
     def save(self, commit=True):
         post = super(PostForm, self).save(commit=False)
         title = self.cleaned_data["post_title"]
         post_body = self.cleaned_data["post_body"]
-        post.pub_date = datetime.datetime.now()
+
+        if self._newly_created:
+            post.pub_date = datetime.datetime.now()
+        else:
+            post.last_edit_date = datetime.datetime.now()
+
         post.post_title = title
         post.post_body = post_body
         post.post_summary = post_body[:997] + "..."

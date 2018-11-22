@@ -12,7 +12,9 @@
                 <form method="post">
                     {% csrf_token %}
                     {{ form.as_p }}
-                    <button type="submit" class="send-button">Login</button>
+                    <div class="submit-wrapper">
+                        <button type="submit" class="send-button">Login</button>
+                    </div>
                 </form>
             </div>
         </div>

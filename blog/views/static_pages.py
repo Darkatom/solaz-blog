@@ -20,7 +20,8 @@ def edit_about(request):
     context = {
         'template_path': "./blog/statics/_edit-static-page.html",
         'form_title': "Sobre nosotras",
-        'form': BlogAboutForm()
+        'form': BlogAboutForm(),
+        'statics': True
     }
 
     if request.method == "POST":
@@ -42,7 +43,8 @@ def edit_contact(request):
     context = {
         'template_path': "./blog/statics/_edit-static-page.html",
         'form_title': "Contacto",
-        'form': BlogContactForm()
+        'form': BlogContactForm(),
+        'statics': True
     }
 
     if request.method == "POST":

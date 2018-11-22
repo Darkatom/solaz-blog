@@ -251,6 +251,7 @@ input, textarea {
 .post-card-title {
     font-size: 1.2em;
     padding-top: 0.5em;
+    align-items: center;
 }
 
 .post-card-title a {
@@ -264,6 +265,10 @@ input, textarea {
 
 .post-card-footer {
     padding-top: 0.8em;
+}
+
+.post-card .label {
+    font-size: 0.75em;
 }
 
 
@@ -318,6 +323,11 @@ input, textarea {
     padding-right: 1.5em;
 }
 
+.post-form h3 {
+    padding-top: 1em;
+    padding-left: 25px;
+}
+
 .post-form label {
     padding: 1em;
 }
@@ -334,6 +344,10 @@ input, textarea {
 .post-form .submit-wrapper {
     padding-top: 1.5em;
     text-align: center;
+}
+
+.post-form .published-field {
+    padding-top: 1em;
 }
 
 
@@ -414,7 +428,7 @@ input, textarea {
     align-items: center;
 }
 
-.dashboard-header .log-out {
+.dashboard-header .logout {
     color: rgb(243, 243, 235);  
     text-decoration: none;
     padding: 0  25px;
@@ -455,6 +469,16 @@ input, textarea {
     text-decoration: none;
 }
 
+.dashboard-sidebar-button:hover {
+    color: rgb(46, 48, 47);  
+    background-color: white;
+}
+
+.dashboard-sidebar-button.selected {
+    color: rgb(46, 48, 47);  
+    background-color: white;
+}
+
 .dashboard-content .card {
     margin: 1em 25px;
     align-items: center;
@@ -481,6 +505,11 @@ input, textarea {
     padding-bottom: 1em;
     padding-left: 1em;
     padding-right: 1.5em;
+}
+
+.static-form h3 {
+    padding-top: 1em;
+    padding-left: 25px;
 }
 
 .static-form input {

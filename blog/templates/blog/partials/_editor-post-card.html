@@ -1,8 +1,12 @@
 <div class="post-card card flex-row">
-    <div class="post-card-title flex-grow">
-        <a href=""><p>{{ post.post_title }}</p></a>
+    <div class="post-card-title flex-grow flex-row">
+        <a href="{% url 'blog:post_view' post.id %}"><p>{{ post.post_title }}</p></a>
+        {% if not post.published %}<p class="label">(Borrador)</p>{% endif %}
     </div>
     <div class="post-card-footer">
+        {% if not post.published %}
+            <a class="blog-button" href="{% url 'blog:publish_post' post.id %}"><i class="far fa-newspaper"></i></a>
+        {% endif %}
         <a class="blog-button" href="{% url 'blog:edit_post' post.id %}"><i class="far fa-edit"></i></a>
         <a class="blog-button" href="{% url 'blog:delete_post' post.id %}"><i class="fas fa-trash-alt"></i></a>
     </div>

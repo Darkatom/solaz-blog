@@ -5,8 +5,19 @@ from blog.forms import *
 from blog.views.renderers import index_renderer, dashboard_renderer
 from django.contrib.auth.decorators import login_required
 
+def index(request):
+    post_list = Post.objects.filter(published=True).order_by('-pub_date')
+    context = {
+        'template_path': "./blog/posts/_post-index.html",
+        'post_list': post_list
+    }
+    return index_renderer(request, context)
+
 def post_view(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
+    if not post.published:
+        return HttpResponseRedirect(reverse('blog:index'))
+
     comment_list = post.comments
     
     context = {
@@ -21,7 +32,8 @@ def post_view(request, post_id):
 def new_post(request):
     context = {
         'template_path': "./blog/posts/_new-post-form.html",
-        'form': PostForm()
+        'form': PostForm(),
+        'posts': True
     }
 
     if request.method == "POST":
@@ -38,7 +50,8 @@ def edit_post(request, post_id):
     context = {
         'template_path': "./blog/posts/_edit-post-form.html",
         'post_id': post_id,
-        'form': PostForm()
+        'form': PostForm(),
+        'posts': True
     }
 
     if request.method == "POST":
@@ -57,4 +70,10 @@ def edit_post(request, post_id):
 def delete_post(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
     post.delete()
+    return HttpResponseRedirect(reverse('blog:dashboard_posts'))
+
+@login_required
+def publish_post(request, post_id):
+    post = get_object_or_404(Post, pk=post_id)
+    post.publish()
     return HttpResponseRedirect(reverse('blog:dashboard_posts'))

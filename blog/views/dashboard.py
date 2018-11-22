@@ -9,7 +9,8 @@ from django.contrib.auth.decorators import login_required
 def dashboard_posts(request):
     context = {
         'template_path': "./blog/posts/_editor-post-list.html",
-        'post_list': Post.objects.all()
+        'post_list': Post.objects.all(),
+        'posts': True
     }
     return dashboard_renderer(request, context)
     
@@ -17,7 +18,8 @@ def dashboard_posts(request):
 def dashboard_comments(request):
     context = {
         'template_path': "./blog/comments/_editor-comment-list.html",
-        'comment_list': Comment.objects.all()
+        'comment_list': Comment.objects.all(),
+        'comments': True
     }
     return dashboard_renderer(request, context)
     
@@ -25,6 +27,7 @@ def dashboard_comments(request):
 def dashboard_static(request):
     context = {
         'template_path': "./blog/statics/_editor-static-list.html",
+        'statics': True
     }
     return dashboard_renderer(request, context)
 

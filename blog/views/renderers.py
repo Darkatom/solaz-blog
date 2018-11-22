@@ -14,11 +14,4 @@ def static_page_renderer(request, context):
     
 def dashboard_renderer(request, context):
     return render(request, 'blog/editor-dashboard.html', context)
-    
-def index(request):
-    post_list = Post.objects.order_by('-pub_date')
-    context = {
-        'template_path': "./blog/posts/_post-index.html",
-        'post_list': post_list
-    }
-    return index_renderer(request, context)
+  
