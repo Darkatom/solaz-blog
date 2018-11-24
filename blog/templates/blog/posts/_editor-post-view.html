@@ -5,7 +5,7 @@
             <p>{{ post.post_title }}</p>
         </div>
         <div class="post-body">
-            <p>{{ post.post_body }}</p>
+            <p>{{ post.post_body | safe }}</p>
         </div>
         <div class="post-footer">
             <p>Publicado: {{post.pub_date}}</p> 

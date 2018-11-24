@@ -4,7 +4,7 @@
         <a href="{% url 'blog:post_view' post.id %}"><p>{{ post.post_title }}</p></a>
     </div>
     <div class="post-body">
-        <p>{{ post.post_body }}</p>
+        <p>{{ post.post_body | safe }}</p>
     </div>
     <div class="post-footer">
         <a class="blog-button" href="{{post.id}}"><i class="fas fa-share-alt"></i></a>

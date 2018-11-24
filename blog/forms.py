@@ -1,4 +1,5 @@
 from django import forms
+from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
 from .models import *
 
@@ -7,7 +8,7 @@ import datetime
 
 class PostForm(forms.ModelForm):
     post_title = forms.CharField(required=True, label='Título', max_length=200)
-    post_body = forms.CharField(required=True, label='Texto', max_length=25000, widget=forms.Textarea)
+    post_body = forms.CharField(required=True, label='Texto', max_length=25000, widget=CKEditorUploadingWidget)
     published = forms.BooleanField(widget=forms.CheckboxInput, required=False)
 
     _newly_created: bool

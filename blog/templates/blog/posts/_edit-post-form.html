@@ -2,6 +2,7 @@
     <h3>Editando artículo</h3>
     <form method="POST" class="post-form" action="{% url 'blog:edit_post' post_id %}">
         {% csrf_token %}
+        {{form.media}}
         <div class="title-field flex-column">
             {{ form.post_title.label_tag }}{{ form.post_title }}
         </div>

@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor_uploader.fields import RichTextUploadingField
 
 class Post (models.Model):
     pub_date = models.DateTimeField('date published')
@@ -6,8 +7,8 @@ class Post (models.Model):
     published = models.BooleanField(default=False)
     
     post_title = models.CharField(max_length=200)
-    post_summary = models.TextField(max_length=1000)
-    post_body = models.TextField(max_length=25000)
+    post_summary = RichTextUploadingField(max_length=1000) #models.TextField(max_length=1000)
+    post_body = RichTextUploadingField(max_length=25000) #models.TextField(max_length=25000)
     
 
     def __str__(self):
