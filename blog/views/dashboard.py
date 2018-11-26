@@ -44,16 +44,16 @@ def dashboard_posts_with_post(request, post_id):
     
 @login_required
 def dashboard_comments(request):
-    comment_list = search(request, "search", [Post], ['author', 'text', 'post__post_title', 'post__post_body'])
+    comment_list = search(request, "search", [Comment], ['author', 'text', 'post__post_title', 'post__post_body'])
     if comment_list is None:
-        comment_list = Post.objects.all()
+        comment_list = Comment.objects.all()
 
-    comment_list = list(filter(lambda p: p.published, comment_list))
+    comment_list = list(comment_list)
     comment_list.sort(key=lambda p: p.pub_date, reverse=True)
 
     context = {
         'template_path': "./blog/comments/_editor-comment-list.html",
-        'commcomment_listent_list': Comment.objects.all(),
+        'comment_list': comment_list,
         'comments': True
     }
     return dashboard_renderer(request, context)

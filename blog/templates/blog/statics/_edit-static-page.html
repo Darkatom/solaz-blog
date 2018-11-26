@@ -2,6 +2,7 @@
     <h3>{{ form_title }}</h3>
     <form method="POST" class="post-form">
         {% csrf_token %}
+        {{form.media}}
         {{form.as_p}}
         <div class="submit-wrapper">
             <button type="submit" class="send-button">Mandar</button>

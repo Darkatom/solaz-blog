@@ -35,14 +35,14 @@ class Post (models.Model):
         self.published = published
         self.post_title = title
         self.post_body = text
-        self.post_summary = text[:997] + "..."
+        self.post_summary = text[:993] + "...</p>"
         self.save()  
 
     def edit(self, edit_date, title, text):
         self.last_edit_date = edit_date
         self.post_title = title
         self.post_body = text
-        self.post_summary = text[:997] + "..."
+        self.post_summary = text[:993] + "...</p>"
         self.save()
 
     def publish(self):

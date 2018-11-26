@@ -4,7 +4,7 @@
         <a href="{% url 'blog:post_view' post.id %}"><p>{{ post.post_title }}</p></a>
     </div>
     <div class="post-card-content">
-        <p>{{ post.post_summary }}</p>
+        {{ post.post_summary | safe }}
     </div>
     <div class="post-card-footer flex-row">
         <a class="post-more"  href="{% url 'blog:post_view' post.id %}">> Leer más...</a>

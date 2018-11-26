@@ -63,7 +63,7 @@ class CommentForm(forms.ModelForm):
         return 
         
 class BlogAboutForm(forms.ModelForm):
-    about = forms.CharField(required=True, label='', max_length=20000, widget=forms.Textarea)
+    about = forms.CharField(required=True, label='', max_length=20000, widget=CKEditorUploadingWidget)
 
     class Meta:
         model = BlogSettings
@@ -83,7 +83,7 @@ class BlogAboutForm(forms.ModelForm):
 
 
 class BlogContactForm(forms.ModelForm):
-    contact_data = forms.CharField(required=True, label='', max_length=20000, widget=forms.Textarea)
+    contact_data = forms.CharField(required=True, label='', max_length=20000, widget=CKEditorUploadingWidget)
 
     class Meta:
         model = BlogSettings

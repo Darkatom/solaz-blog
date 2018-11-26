@@ -454,6 +454,11 @@ input, textarea {
 
 /* ---------------- DASHBOARD ---------------- */
 
+.dashboard-wrapper {
+    height: auto;
+    min-height: -webkit-fill-available;
+}
+
 .dashboard-header {
     background-color: rgb(46, 48, 47);
     background-image: none;
