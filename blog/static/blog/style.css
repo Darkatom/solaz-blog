@@ -160,6 +160,7 @@ input, textarea {
 
 .navigation-container {
     color: rgb(243, 243, 235); 
+    justify-content: center;
 }
 
 .navigation-button {
@@ -167,6 +168,33 @@ input, textarea {
     text-decoration:none;
     text-transform: uppercase;
 }
+
+/* Links inside the dropdown */
+.dropdown-content .navigation-button {
+    padding: 0.5em 16px;
+    display: block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    margin: 0 auto;
+
+    background-color:  rgb(46, 48, 47);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a:hover {
+    background-color: rgb(243, 243, 235);
+    color:  rgb(46, 48, 47);
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
 
 /* ---------------- FOOTER ---------------- */
 .footer-wrapper {

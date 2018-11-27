@@ -1,13 +1,39 @@
-<div class="navigation-container">
-    <nav>
+<nav>
+    <div class="navigation-container flex-row">
         <a href="" class="navigation-button">Archivo</a>
         &emsp;|&emsp;
-        <a href="" class="navigation-button">Corrientes</a>
+        <div class="dropdown">
+            <a href="{% url 'blog:tag_search' 'Pagan'%}" class="navigation-button">Corrientes</a>
+            <div class="dropdown-content">
+                <a href="{% url 'blog:tag_search' 'Chaman'%}" class="navigation-button">Chamana</a>
+                <a href="{% url 'blog:tag_search' 'Druid'%}" class="navigation-button">Druida</a>
+                <a href="{% url 'blog:tag_search' 'Wicca'%}" class="navigation-button">Wicca</a>
+                <a href="{% url 'blog:tag_search' 'Tameran'%}" class="navigation-button">Tamerana</a>
+            </div>
+        </div>
         &emsp;|&emsp;
-        <a href="" class="navigation-button">DIY</a>
+        <div class="dropdown">
+            <a href="{% url 'blog:tag_search' 'DIY'%}" class="navigation-button">DIY</a>
+            <div class="dropdown-content">
+                <a href="{% url 'blog:tag_search' 'DIY_Athame'%}" class="navigation-button">Athames</a>
+                <a href="{% url 'blog:tag_search' 'DIY_Figures'%}" class="navigation-button">Figuras</a>
+                <a href="{% url 'blog:tag_search' 'DIY_Grimoire'%}" class="navigation-button">Grimorios</a>
+                <a href="{% url 'blog:tag_search' 'DIY_Wand'%}" class="navigation-button">Varitas</a>
+                <a href="{% url 'blog:tag_search' 'DIY_Other'%}" class="navigation-button">Otros</a>
+            </div>
+        </div>
         &emsp;|&emsp;
-        <a href="" class="navigation-button">Grimorio</a>
+        <div class="dropdown">
+        <a href="{% url 'blog:tag_search' 'Grimoire'%}" class="navigation-button">Grimorio</a>
+            <div class="dropdown-content">
+                <a href="{% url 'blog:tag_search' 'Divination'%}" class="navigation-button">Adivinación</a>
+                <a href="{% url 'blog:tag_search' 'Fauna'%}" class="navigation-button">Fauna</a>
+                <a href="{% url 'blog:tag_search' 'Flora'%}" class="navigation-button">Flora</a>
+                <a href="{% url 'blog:tag_search' 'Magic'%}" class="navigation-button">Magia</a>
+                <a href="{% url 'blog:tag_search' 'Rites'%}" class="navigation-button">Ritos</a>
+            </div>
+        </div>
         &emsp;|&emsp;
         <a href="{% url 'blog:about' %}" class="navigation-button">Sobre nosotras</a>
-    </nav>
-</div>
+    </div>
+</nav>
