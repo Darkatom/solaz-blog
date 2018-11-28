@@ -1,6 +1,8 @@
 from django.db import models
 from ckeditor_uploader.fields import RichTextUploadingField
 
+from .tag_model import Tag
+
 class Post (models.Model):
     pub_date = models.DateTimeField('date published')
     last_edit_date = models.DateTimeField('date last edited', null=True)
@@ -10,6 +12,7 @@ class Post (models.Model):
     post_summary = RichTextUploadingField(max_length=1000) #models.TextField(max_length=1000)
     post_body = RichTextUploadingField(max_length=25000) #models.TextField(max_length=25000)
     
+    tags = models.ManyToManyField(Tag, related_name="posts")
 
     def __str__(self):
         publication = self.pub_date.strftime('(%Y-%m-%d, %H:%M)')
@@ -28,23 +31,18 @@ class Post (models.Model):
     def __unicode__(self):
         return u'{t}/{b}'.format(t=self.post_title, b=self.post_body)
 
-    # -- Control
-    
-    def new(self, pub_date, published, title, text):
-        self.pub_date = pub_date
-        self.published = published
-        self.post_title = title
-        self.post_body = text
-        self.post_summary = text[:993] + "...</p>"
-        self.save()  
-
-    def edit(self, edit_date, title, text):
-        self.last_edit_date = edit_date
-        self.post_title = title
-        self.post_body = text
-        self.post_summary = text[:993] + "...</p>"
-        self.save()
-
     def publish(self):
         self.published = True
         self.save()
+
+    def get_tags(self):
+        s = ""
+        for tag in self.tags.all():
+            s += " " + tag.word
+        return s
+
+    def get_tags_html(self):
+        s = ""
+        for tag in self.tags.all():
+            s += '<p class="tag">' + tag.word + '</p>'
+        return s

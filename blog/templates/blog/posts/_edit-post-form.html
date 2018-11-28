@@ -3,15 +3,7 @@
     <form method="POST" class="post-form" action="{% url 'blog:edit_post' post_id %}">
         {% csrf_token %}
         {{form.media}}
-        <div class="title-field flex-column">
-            {{ form.post_title.label_tag }}{{ form.post_title }}
-        </div>
-        <div class="body-field flex-column">
-            {{ form.post_body.label_tag }}{{ form.post_body }}
-        </div>
-        <div class="published-field">
-            {{ form.published.label_tag }}{{ form.published }}
-        </div>
+        {{form.as_p}}
         <div class="submit-wrapper">
             <button type="submit" class="send-button">Mandar</button>
         </div>

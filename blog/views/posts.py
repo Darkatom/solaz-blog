@@ -8,18 +8,13 @@ from django.contrib.auth.decorators import login_required
 from ..utils import *
 
 def post_list(request):
-    post_list = search(request, "search", [Post], ['post_title', 'post_body'])
-    if post_list is None:
-        post_list = Post.objects.all()
-
-    post_list = list(filter(lambda p: p.published, post_list))
-    post_list.sort(key=lambda p: p.pub_date, reverse=True)
-
-    return index(request, post_list)
-
-def tag_search(request, tag):
-    # TO-DO
-    post_list = search(request, "search", [Post], ['post_title', 'post_body'])
+    post_list = None
+    
+    if "search" in request.GET:
+        post_list = search(request, "search", [Post], ['post_title', 'post_body'])
+    elif "tag" in request.GET:
+        post_list = search(request, "tag", [Post], ['tags__word'])
+    
     if post_list is None:
         post_list = Post.objects.all()
 

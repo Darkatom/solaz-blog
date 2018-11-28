@@ -9,13 +9,15 @@ import datetime
 class PostForm(forms.ModelForm):
     post_title = forms.CharField(required=True, label='Título', max_length=200)
     post_body = forms.CharField(required=True, label='Texto', max_length=25000, widget=CKEditorUploadingWidget)
-    published = forms.BooleanField(widget=forms.CheckboxInput, required=False)
+    published = forms.BooleanField(required=False, widget=forms.CheckboxInput)
+
+    tags = forms.ModelMultipleChoiceField(required=False, queryset=Tag.objects.all())
 
     _newly_created: bool
 
     class Meta:
         model = Post
-        fields = ['post_title', 'post_body', 'published']
+        fields = ['post_title', 'post_body', 'published', 'tags']
 
     def __init__(self, *args, **kwargs):
         self._newly_created = kwargs.get('instance') is None
@@ -34,6 +36,7 @@ class PostForm(forms.ModelForm):
         post.post_title = title
         post.post_body = post_body
         post.post_summary = post_body[:997] + "..."
+        post.tags.set(self.cleaned_data["tags"])
 
         if commit:
             post.save()

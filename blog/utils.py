@@ -54,8 +54,10 @@ def search(request, query_name, models, search_fields):
 
     if (query_name in request.GET) and request.GET[query_name].strip():
         query_string = request.GET[query_name]
+        print(query_string)
         
         entry_query = get_query(query_string, search_fields)
+        print(entry_query)
         
         found_entries = {}
         for model in models:

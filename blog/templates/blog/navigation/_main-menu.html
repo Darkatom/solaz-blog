@@ -1,36 +1,41 @@
 <nav>
     <div class="navigation-container flex-row">
-        <a href="" class="navigation-button">Archivo</a>
-        &emsp;|&emsp;
         <div class="dropdown">
-            <a href="{% url 'blog:tag_search' 'Pagan'%}" class="navigation-button">Corrientes</a>
+            <a href="" class="navigation-button">Archivo</a>
             <div class="dropdown-content">
-                <a href="{% url 'blog:tag_search' 'Chaman'%}" class="navigation-button">Chamana</a>
-                <a href="{% url 'blog:tag_search' 'Druid'%}" class="navigation-button">Druida</a>
-                <a href="{% url 'blog:tag_search' 'Wicca'%}" class="navigation-button">Wicca</a>
-                <a href="{% url 'blog:tag_search' 'Tameran'%}" class="navigation-button">Tamerana</a>
+                <a href="/?tag=historia" class="navigation-button">Historia</a>
+                <a href="/?tag=mitologia" class="navigation-button">Mitología</a>
             </div>
         </div>
         &emsp;|&emsp;
         <div class="dropdown">
-            <a href="{% url 'blog:tag_search' 'DIY'%}" class="navigation-button">DIY</a>
+            <a href="/?tag=corrientes" class="navigation-button">Corrientes</a>
             <div class="dropdown-content">
-                <a href="{% url 'blog:tag_search' 'DIY_Athame'%}" class="navigation-button">Athames</a>
-                <a href="{% url 'blog:tag_search' 'DIY_Figures'%}" class="navigation-button">Figuras</a>
-                <a href="{% url 'blog:tag_search' 'DIY_Grimoire'%}" class="navigation-button">Grimorios</a>
-                <a href="{% url 'blog:tag_search' 'DIY_Wand'%}" class="navigation-button">Varitas</a>
-                <a href="{% url 'blog:tag_search' 'DIY_Other'%}" class="navigation-button">Otros</a>
+                <a href="/?tag=chamana" class="navigation-button">Chamana</a>
+                <a href="/?tag=druida" class="navigation-button">Druida</a>
+                <a href="/?tag=wicca" class="navigation-button">Wicca</a>
+                <a href="/?tag=tamerana" class="navigation-button">Tamerana</a>
             </div>
         </div>
         &emsp;|&emsp;
         <div class="dropdown">
-        <a href="{% url 'blog:tag_search' 'Grimoire'%}" class="navigation-button">Grimorio</a>
+            <a href="/?tag=diy" class="navigation-button">DIY</a>
             <div class="dropdown-content">
-                <a href="{% url 'blog:tag_search' 'Divination'%}" class="navigation-button">Adivinación</a>
-                <a href="{% url 'blog:tag_search' 'Fauna'%}" class="navigation-button">Fauna</a>
-                <a href="{% url 'blog:tag_search' 'Flora'%}" class="navigation-button">Flora</a>
-                <a href="{% url 'blog:tag_search' 'Magic'%}" class="navigation-button">Magia</a>
-                <a href="{% url 'blog:tag_search' 'Rites'%}" class="navigation-button">Ritos</a>
+                <a href="/?tag=diy_athame" class="navigation-button">Athames</a>
+                <a href="/?tag=diy_grimorio" class="navigation-button">Grimorios</a>
+                <a href="/?tag=diy_joya" class="navigation-button">joyas</a>
+                <a href="/?tag=diy_varita" class="navigation-button">Varitas</a>
+                <a href="/?tag=diy_otros" class="navigation-button">Otros</a>
+            </div>
+        </div>
+        &emsp;|&emsp;
+        <div class="dropdown">
+        <a href="/?tag=grimorio" class="navigation-button">Grimorio</a>
+            <div class="dropdown-content">
+                <a href="/?tag=adivinacion" class="navigation-button">Adivinación</a>
+                <a href="/?tag=criaturas" class="navigation-button">Criaturas</a>
+                <a href="/?tag=herbologia" class="navigation-button">Herbología</a>
+                <a href="/?tag=magia" class="navigation-button">Magia</a>
             </div>
         </div>
         &emsp;|&emsp;
