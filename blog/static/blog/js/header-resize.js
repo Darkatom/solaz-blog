@@ -13,5 +13,5 @@ function resizeHeaderOnScroll() {
     }        
 }
 
-var blog_title = {{blog_title}};
+var blog_title = document.getElementById("js-title").innerText;
 window.addEventListener('scroll', resizeHeaderOnScroll);

@@ -170,6 +170,12 @@ input, textarea {
 }
 
 /* Links inside the dropdown */
+.dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .dropdown-content .navigation-button {
     padding: 0.5em 16px;
     display: block;
@@ -179,13 +185,13 @@ input, textarea {
     display: none;
     position: absolute;
     z-index: 1;
-    margin: 0 auto;
+    margin-top: 25px;
 
     background-color:  rgb(46, 48, 47);
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
-.dropdown-content input:hover {
+.dropdown-content a:hover {
     background-color: rgb(243, 243, 235);
     color:  rgb(46, 48, 47);
 }
