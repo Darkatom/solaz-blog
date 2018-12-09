@@ -1,10 +1,12 @@
 {% load static %}
 
 <header id="js-header" class="header-wrapper">
+    <div class="corner top-left"></div>
     <div class="header-content">
-        <a href="/" class="header-title"><h1 id="js-title">{{blog_title}}</h1></a>
+        <a href="/" class="header-title"><h1 id="js-title">{{blog_title}}</h1></a>        
         {% include "./_main-menu.html" %}
     </div>
+    <div class="corner top-right"></div>
 </header>
 
 <script src="{% static 'blog/js/header-resize.js' %}"></script>   

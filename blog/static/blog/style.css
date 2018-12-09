@@ -92,6 +92,26 @@ input, textarea {
 }
 
 /* ---------------- HEADER ---------------- */
+.corner {
+	position: absolute;
+    background-image: url("./images/cantonera.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 100px;
+    height: 100px;
+}
+
+.corner.top-left {
+    top: 0px;
+    left: 0px;
+}
+.corner.top-right {
+    top: 0px;
+    right: 0px;
+    transform: scaleX(-1);
+}
+
 .header-wrapper {
 	position: fixed;
     background-color: rgb(46, 48, 47);
@@ -154,6 +174,11 @@ input, textarea {
     height: 50px;
 
     text-decoration: none;
+}
+
+.reduced .corner {
+    width: 50px;
+    height: 50px;
 }
 
 /* ---------------- NAVIGATION ---------------- */

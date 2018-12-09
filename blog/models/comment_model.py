@@ -12,3 +12,12 @@ class Comment (models.Model):
 
     def __unicode__(self):
         return u'{t}'.format(t=self.text)
+
+    
+    ## -- Control -- ##
+    def new(self, author, post, pub_date, text):
+        self.author = author
+        self.post = post
+        self.pub_date = pub_date
+        self.text = text
+        self.save()  

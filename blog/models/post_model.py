@@ -16,7 +16,11 @@ class Post (models.Model):
 
     def __str__(self):
         publication = self.pub_date.strftime('(%Y-%m-%d, %H:%M)')
-        edit = self.last_edit_date.strftime('[%Y-%m-%d, %H:%M]')
+
+        if self.last_edit_date is None:
+            edit = publication
+        else:
+            edit = self.last_edit_date.strftime('[%Y-%m-%d, %H:%M]')
 
         info = publication + " "
         if publication != edit:
@@ -30,6 +34,22 @@ class Post (models.Model):
 
     def __unicode__(self):
         return u'{t}/{b}'.format(t=self.post_title, b=self.post_body)
+
+
+    ## -- Control -- ##
+    def new(self, pub_date, title, text, save=True):
+        self.pub_date = pub_date
+        self.post_title = title
+        self.post_body = text
+        self.post_summary = text[:997] + "..."
+        self.save()  
+
+    def edit(self, edit_date, title, text):
+        self.last_edit_date = edit_date
+        self.post_title = title
+        self.post_body = text
+        self.post_summary = text[:997] + "..."
+        self.save()
 
     def publish(self):
         self.published = True

@@ -36,11 +36,12 @@ class PostForm(forms.ModelForm):
         post.post_title = title
         post.post_body = post_body
         post.post_summary = post_body[:997] + "..."
-        post.tags.set(self.cleaned_data["tags"])
 
         if commit:
             post.save()
-            
+            post.tags.set(self.cleaned_data["tags"])
+            post.save()
+
         return post
 
 class CommentForm(forms.ModelForm):
