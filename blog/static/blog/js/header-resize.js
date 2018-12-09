@@ -1,6 +1,6 @@
 function resizeHeaderOnScroll() {
     const distanceY = window.pageYOffset || document.documentElement.scrollTop,
-    shrinkOn = 50,
+    shrinkOn = 100,
     header = document.getElementById('js-header');
     title = document.getElementById('js-title');
     

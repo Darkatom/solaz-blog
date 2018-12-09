@@ -1,4 +1,7 @@
 uploads/*
+
 solaz/media/*
+
 *.pyc
+db
 db.sqlite3
