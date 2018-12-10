@@ -529,6 +529,14 @@ input, textarea {
 
 /* ---------------- DASHBOARD ---------------- */
 
+.web-container.dashboard {
+    background-color: rgb(243, 243, 235);  
+}
+
+.dashboard .corner.bottom-left {
+    position: relative;
+}
+
 .dashboard-wrapper {
     height: auto;
     min-height: -webkit-fill-available;

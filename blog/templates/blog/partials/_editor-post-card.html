@@ -8,6 +8,6 @@
             <a class="blog-button" href="{% url 'blog:publish_post' post.id %}"><i class="far fa-newspaper"></i></a>
         {% endif %}
         <a class="blog-button" href="{% url 'blog:edit_post' post.id %}"><i class="far fa-edit"></i></a>
-        <a class="blog-button" href="{% url 'blog:delete_post' post.id %}"><i class="fas fa-trash-alt"></i></a>
+        <a class="blog-button" href="{% url 'blog:delete_post' post.id %}" onclick="return confirm('¿Borrar este artículo?')"><i class="fas fa-trash-alt"></i></a>
     </div>
 </div>

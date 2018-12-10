@@ -15,7 +15,9 @@
     {% if post.comments.all %}
         {% for comment in post.comments.all %}
             <div class="comment-control flex-row">
-                <a class="blog-button comment" href="{% url 'blog:dashboard_post_delete_comment' post.id comment.id %}"><i class="fas fa-trash-alt"></i></a>
+                <a class="blog-button comment" href="{% url 'blog:dashboard_post_delete_comment' post.id comment.id %}" onclick="return confirm('¿Borrar este comentario?')">
+                    <i class="fas fa-trash-alt"></i>
+                </a>
                 {% include "../partials/_comment-card.html" %}
             </div>
         {% endfor %}
